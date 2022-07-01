@@ -1,0 +1,2 @@
+const express = require('express');
+const app = express(); //call express as a function and store it as the app variable. This will allow us to take all the different server code we need to set up routing
