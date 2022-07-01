@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Password Protected File Sharing</title>
 </head>
-<body>
-  
+
+<body style="background-color: #8BC6EC;
+font-size: 2rem; font-family: fantasy;">
+
+
+
+
+
+  <!-- the form action and method are how we send this to the backend. So on our server we want to listen to a POST request to the '/upload' URL. -->
+  <!-- We also need to tell the server that our form is multipart because it has a file. Usually forms don't contain files. -->
+  <form action="/upload" method="post"
+    style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto; margin-top: 2rem"
+    enctype="multipart/form-data">
+    <label for="file">
+      File:
+    </label>
+    <input type="file" id="file" name="file" required />
+    <label for="password">
+      Password:
+    </label>
+    <input type="password" id="password" name="password" />
+    <!-- the 'id' links it to the 'for' label -->
+    <button type="submit" style="grid-column: span 2; font-size: 1rem; font-weight: bold">Share</button>
+  </form>
+
+  <% if (locals.fileLink !=null) { %>
+    <div style="margin-top: 2rem; text-align: center;">
+      Your file is upload
+      <a href="<%= locals.fileLink %>">
+        <%= locals.fileLink %>
+      </a>
+    </div>
+    <% } %>
+
 </body>
+
 </html>
