@@ -11,10 +11,6 @@
 <body style="background-color: #8BC6EC;
 font-size: 2rem; font-family: fantasy;">
 
-
-
-
-
   <!-- the form action and method are how we send this to the backend. So on our server we want to listen to a POST request to the '/upload' URL. -->
   <!-- We also need to tell the server that our form is multipart because it has a file. Usually forms don't contain files. -->
   <form action="/upload" method="post"
@@ -39,7 +35,7 @@ font-size: 2rem; font-family: fantasy;">
         <%= locals.fileLink %>
       </a>
     </div>
-    <% } %>
+  <% } %>
 
 </body>
 
